@@ -31,7 +31,7 @@ buildscript {
     dependencies {
         // The gradle plugin and the maven plugin have to be updated after each version of Android
         // studio comes out
-        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.android.tools.build:gradle:3.5.2'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     }
@@ -45,8 +45,8 @@ group = 'org.apache.cordova'
 version = '8.0.0'
 
 android {
-    compileSdkVersion cdvCompileSdkVersion
-    buildToolsVersion cdvBuildToolsVersion
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -70,6 +70,9 @@ android {
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/NOTICE'
+    }
+    defaultConfig {
+        minSdkVersion 28
     }
 }
 

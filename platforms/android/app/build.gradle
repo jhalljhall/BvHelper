@@ -27,7 +27,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.android.tools.build:gradle:3.5.2'
     }
 }
 
@@ -166,6 +166,8 @@ android {
     defaultConfig {
         versionCode cdvVersionCode ?: new BigInteger("" + privateHelpers.extractIntFromManifest("versionCode"))
         applicationId privateHelpers.extractStringFromManifest("package")
+        minSdkVersion 28
+        targetSdkVersion 29
 
         if (cdvMinSdkVersion != null) {
             minSdkVersion cdvMinSdkVersion
@@ -176,8 +178,8 @@ android {
       abortOnError false;
     }
 
-    compileSdkVersion cdvCompileSdkVersion
-    buildToolsVersion cdvBuildToolsVersion
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     // This code exists for Crosswalk and other Native APIs.
     // By default, we multiply the existing version code in the
